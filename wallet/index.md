@@ -1,4 +1,4 @@
----
+---/Sdk
 slug: /
 description: Welcome to the MetaMask Wallet API documentation
 ---
