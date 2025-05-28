@@ -1,5 +1,7 @@
 ---
-description: debug_traceTransaction API method
+description: Returns tracing results for the specified transaction.
+title: Mantle debug_traceTransaction
+sidebar_label: debug_traceTransaction
 ---
 
 import Tabs from "@theme/Tabs";

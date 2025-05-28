@@ -1,5 +1,7 @@
 ---
-description: debug_traceBlock API method
+description: Return a  full trace of all invoked opcodes of all transactions included in the block.
+title: Mantle debug_traceBlock
+sidebar_label: debug_traceBlock
 ---
 
 import Tabs from "@theme/Tabs";

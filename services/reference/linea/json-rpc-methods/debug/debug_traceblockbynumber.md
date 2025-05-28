@@ -1,5 +1,7 @@
 ---
-description: debug_traceBlockByNumber API method
+description: Return tracing results by executing all transactions in a specified block number.
+title: Linea debug_traceBlockByNumber
+sidebar_label: debug_traceBlockByNumber
 ---
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -16,7 +18,7 @@ Returns tracing results by executing all transactions in the specified block num
     `safe` isn't supported. Use `finalized` instead.
     Learn more about [Linea's layer 2 finalization](https://docs.linea.build/developers/guides/finalized-block). 
     :::
-    
+
 - Optional tracing options object with the following fields:
     - `tracer`: (string) _[optional]_ type of tracer. Supports [`callTracer`](../debug/index.md#calltracer) or
         [`prestateTracer`](../debug/index.md#prestatetracer).

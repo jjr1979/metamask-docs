@@ -1,5 +1,5 @@
 ---
-description: Manage networks
+description: Manage networks with the SDK in your Wagmi or Vanilla JavaScript dapp.
 toc_max_heading_level: 2
 ---
 
@@ -14,7 +14,7 @@ With the SDK, you can:
 - **Handle common network-related errors**.
 
 <p align="center">
-  <a href="https://metamask-sdk-examples-relink.vercel.app/" target="_blank">
+  <a href="https://metamask-sdk-examples.vercel.app/" target="_blank">
     <img src={require("../_assets/network.gif").default} alt="Switch Networks" width="450px" />
   </a>
 </p>

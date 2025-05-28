@@ -1,6 +1,7 @@
 // @ts-check
 // Note: type annotations allow type checking and IDEs autocompletion
 
+import fs from "fs";
 require('dotenv').config()
 const { themes } = require('prism-react-renderer')
 const { REF_ALLOW_LOGIN_PATH } = require('./src/lib/constants')
@@ -13,7 +14,7 @@ const {
 const codeTheme = themes.dracula
 const remarkCodesandbox = require('remark-codesandbox')
 const isProd = process.env.NODE_ENV === 'production'
-
+const helpDropdown = fs.readFileSync("./src/components/NavDropdown/DeveloperTools.html", "utf-8");
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: 'MetaMask developer documentation',
@@ -42,7 +43,6 @@ const config = {
     VERCEL_ENV: process.env.VERCEL_ENV,
     DASHBOARD_URL: process.env.DASHBOARD_URL || 'http://localhost:3000',
     SENTRY_KEY: process.env.SENTRY_KEY,
-    GF_SURVEY_KEY: process.env.GF_SURVEY_KEY,
     LINEA_ENS_URL: process.env.LINEA_ENS_URL,
   },
 
@@ -50,15 +50,13 @@ const config = {
 
   scripts: [
     {
-      src: 'https://cmp.osano.com/AzZMxHTbQDOQD8c1J/a2e89f0e-f467-4542-bfea-30ea2c1a6648/osano.js',
+      src: 'https://cmp.osano.com/AzZMxHTbQDOQD8c1J/84e64bce-4a70-4dcc-85cb-7958f22b2371/osano.js',
     },
     {
       src: 'https://plausible.io/js/script.js',
       defer: true,
       'data-domain': 'docs.metamask.io',
     },
-    { src: '/js/feedback-script.js', defer: true, async: true },
-    { src: '/js/getfeedback.js', defer: true, async: true },
   ],
 
   markdown: {
@@ -215,14 +213,11 @@ const config = {
           {
             type: 'dropdown',
             label: 'Developer tools',
+            to: 'developer-tools/dashboard',
             items: [
               {
-                label: 'Developer dashboard',
-                to: 'developer-tools/dashboard',
-              },
-              {
-                label: 'Faucet',
-                to: 'developer-tools/faucet',
+                type: "html",
+                value: helpDropdown,
               },
             ],
           },
@@ -296,16 +291,16 @@ const config = {
                 href: 'https://github.com/MetaMask/metamask-docs',
               },
               {
-                label: "MetaMask wallet GitHub",
-                href: "https://github.com/MetaMask/metamask-extension/",
+                label: 'MetaMask wallet GitHub',
+                href: 'https://github.com/MetaMask/metamask-extension/',
               },
               {
                 label: 'MetaMask SDK GitHub',
                 href: 'https://github.com/MetaMask/metamask-sdk/',
               },
               {
-                label: "MetaMask Mobile GitHub",
-                href: "https://github.com/MetaMask/metamask-mobile",
+                label: 'MetaMask Mobile GitHub',
+                href: 'https://github.com/MetaMask/metamask-mobile',
               },
               {
                 label: 'Snaps GitHub',
@@ -360,6 +355,18 @@ const config = {
       prism: {
         theme: codeTheme,
         additionalLanguages: ['csharp', 'gradle', 'bash', 'json'],
+        magicComments: [
+          {
+            className: "git-diff-remove",
+            line: "remove-next-line",
+            block: { start: "remove-start", end: "remove-end" },
+          },
+          {
+            className: "git-diff-add",
+            line: "add-next-line",
+            block: { start: "add-start", end: "add-end" },
+          },
+        ],
       },
       algolia: {
         // The application ID provided by Algolia

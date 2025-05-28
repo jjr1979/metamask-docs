@@ -59,9 +59,18 @@ const sidebar = {
           ]
         },
         {
-          type: "doc",
+          type: "category",
           label: "Send transactions",
-          id: "how-to/send-transactions"
+          collapsible: true,
+          collapsed: true,
+          link: {type: "doc", id: "how-to/send-transactions/index" },
+          items: [
+            {
+              type: "doc",
+              label: "Send batch transactions",
+              id: "how-to/send-transactions/send-batch-transactions"
+            }
+          ]
         },
         {
           type: "category",
@@ -100,8 +109,13 @@ const sidebar = {
           link: { type: "doc", id: "how-to/use-non-evm-networks/index" },
           items: [
             {
+              type: "doc",
+              label: "Solana",
+              id: "how-to/use-non-evm-networks/solana"
+            },
+            {
               type: "category",
-              label: "Use Starknet",
+              label: "Starknet",
               link: { type: "doc", id: "how-to/use-non-evm-networks/starknet/index" },
               items: [
                 {

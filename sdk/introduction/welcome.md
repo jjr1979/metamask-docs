@@ -1,6 +1,7 @@
 ---
 slug: /
-title: Welcome
+sidebar_label: Welcome
+description: Introduction page for MetaMask SDK documentation.
 ---
 
 # Build onchain dapps with MetaMask SDK
@@ -32,4 +33,5 @@ You can get started quickly with the following dapp platforms:
 
 - [JavaScript + Wagmi (recommended)](quickstart/javascript-wagmi.md)
 - [JavaScript](quickstart/javascript.md)
+- [Dynamic SDK integration](quickstart/javascript-dynamic.md)
 - [React Native](quickstart/react-native.md)

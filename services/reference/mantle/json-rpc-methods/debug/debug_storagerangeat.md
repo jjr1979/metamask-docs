@@ -1,5 +1,7 @@
 ---
-description: debug_storageRangeAt API method
+description: Return the contract storage for the specified range.
+title: Mantle debug_storageRangeAt
+sidebar_label: debug_storageRangeAt
 ---
 
 import Tabs from "@theme/Tabs";
